@@ -16,6 +16,4 @@ public:
     virtual void display() = 0;
 };
 
-
-
 #endif /* INCLUDE_BOARD_H_ */

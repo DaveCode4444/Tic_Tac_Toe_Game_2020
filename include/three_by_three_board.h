@@ -24,6 +24,4 @@ class three_by_three_board : public board
         std::vector<std::vector<char>> m_board;
 };
 
-
-
 #endif /* INCLUDE_THREE_BY_THREE_BOARD_H_ */
