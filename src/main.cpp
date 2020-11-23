@@ -8,34 +8,27 @@
 #include <memory>
 
 #include "../include/board_factory.h"
+#include "../include/game_application.h"
 #include "../include/three_by_three_board.h"
 #include "../include/player.h"
 
 int main()
 {
     std::cout << "Ready to Play Tic Tac Toe?" << std::endl;
+    std::unique_ptr<game_application> app{new game_application{}};
 
-    std::unique_ptr<board_factory> b_factory{new board_factory{}};
-    std::unique_ptr<board> b = b_factory->get_board();
-
+    //create, get and display board
+    std::unique_ptr<board> b = app->get_game_board();
     b->display();
-
     std::cout << "--------------------------" << std::endl;
-    std::cout << "Starting Two Player Tic Tac Toe Game" << std::endl;
 
-    std::cout << "Player 1 please Enter you name " << std::endl;
-    std::string p1_name;
-    std::cin >> p1_name;
-    std::unique_ptr<player> player1{new player{p1_name}};
+    //init player
+    std::cout << "Init players" << std::endl;
 
-
-    std::cout << "Player 2 please Enter you name " << std::endl;
-    std::string p2_name;
-    std::cin >> p2_name;
-    std::unique_ptr<player> player2{new player{p2_name}};
-
-    std::cout << p1_name  << " is playing "<<std::endl;
-    std::cout << p2_name  << " is playing "<<std::endl;
+    std::unique_ptr<player> player1 = app->initialize_player();
+    std::unique_ptr<player> player2 = app->initialize_player();
+    std::cout << player1->get_name()  << " is playing "<<std::endl;
+    std::cout << player2->get_name()  << " is playing "<<std::endl;
     std::cout << "--------------------------" << std::endl;
 
     return 0;

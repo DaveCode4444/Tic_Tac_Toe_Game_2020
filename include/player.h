@@ -17,6 +17,7 @@ class player
         virtual ~player() = default;
 
         void play(unsigned int x_coordinate, unsigned int y_coordinate);
+        std::string get_name();
 
     private:
         std::string m_name;

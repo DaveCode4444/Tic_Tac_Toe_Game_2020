@@ -7,6 +7,7 @@
 
 #include "../include/player.h"
 
+#include <iostream>
 #include <string>
 
 player::player(std::string name) :
@@ -16,6 +17,11 @@ player::player(std::string name) :
 
 void player::play(unsigned int , unsigned int)
 {
+}
+
+std::string player::get_name()
+{
+    return m_name;
 }
 
 

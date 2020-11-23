@@ -15,7 +15,7 @@
 class board_factory
 {
     public:
-        board_factory();
+        board_factory() = default;
         virtual ~board_factory() = default;
 
         std::unique_ptr<board> get_board();
