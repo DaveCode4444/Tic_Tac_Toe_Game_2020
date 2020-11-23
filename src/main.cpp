@@ -5,10 +5,19 @@
  *      Author: Devang Sawant
  */
 #include <iostream>
+#include <memory>
+
+#include "../include/board.h"
+#include "../include/three_by_three_board.h"
 
 int main()
 {
-    std::cout << "hello world : this is devang" << std::endl;
+    std::cout << "Ready to Play Tic Tac Toe?" << std::endl;
+
+    std::unique_ptr<board> b{new three_by_three_board()};
+
+    b->display();
+
     return 0;
 }
 
