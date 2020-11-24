@@ -19,11 +19,13 @@ class game_application
         game_application();
         virtual ~game_application() = default;
 
-        std::unique_ptr<board> get_game_board();
-        std::unique_ptr<player> initialize_player();
-        void start_game();
+        std::shared_ptr<board> get_game_board();
+        std::shared_ptr<player> initialize_player();
+        void play_game(std::shared_ptr<player> player, std::shared_ptr<board> game_board, char marker);
 
     private:
+        static unsigned int player_id;
+
         std::unique_ptr<board_factory> m_board_factory;
 };
 

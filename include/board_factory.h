@@ -18,7 +18,7 @@ class board_factory
         board_factory() = default;
         virtual ~board_factory() = default;
 
-        std::unique_ptr<board> get_board();
+        std::shared_ptr<board> get_board();
 };
 
 #endif /* INCLUDE_BOARD_FACTORY_H_ */
